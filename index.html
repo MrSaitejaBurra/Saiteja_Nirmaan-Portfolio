@@ -1,1 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saiteja Burra · Communications</title>
+<meta name="description" content="Communications portfolio of Saiteja Burra: CSR communication, storytelling, and reporting at Nirmaan Organization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700;8..60,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF9F3;
+    --bg:#FFFFFF;
+    --bg-tint:#F2F7F3;
+    --ink:#14201B;
+    --body:#3E4A44;
+    --teal:#1E4D6B;
+    --green:#2E7D57;
+    --amber:#D9832E;
+    --line:#E2E7E1;
+    --muted:#6E7B74;
+    --max:1120px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--body);
+    background:var(--paper);
+    line-height:1.65;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Source Serif 4',serif;
+    color:var(--ink);
+    font-weight:600;
+    line-height:1.15;
+  }
+  a{color:var(--teal);text-decoration:none;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
 
+  /* EYEBROW WITH NUMBER CHIP */
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .eyebrow-num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:7px;
+    background:linear-gradient(135deg,var(--teal),var(--green));
+    color:#fff;font-size:11px;font-weight:800;letter-spacing:0;
+  }
+  .rule{
+    width:56px;height:3px;
+    background:linear-gradient(90deg,var(--teal),var(--amber));
+    border:none;
+    margin:16px 0 30px;
+    border-radius:2px;
+  }
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,249,243,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    max-width:var(--max);margin:0 auto;padding:18px 32px;
+    display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:12px;
+  }
+  nav .brand{
+    font-family:'Source Serif 4',serif;
+    font-weight:700;font-size:18px;color:var(--ink);
+    display:flex;align-items:center;gap:8px;
+  }
+  nav .brand .dot{
+    width:9px;height:9px;border-radius:50%;
+    background:linear-gradient(135deg,var(--amber),var(--green));
+    display:inline-block;
+  }
+  nav ul{
+    display:flex;gap:26px;list-style:none;flex-wrap:wrap;
+  }
+  nav ul li a{
+    font-size:13px;font-weight:600;color:var(--body);
+    letter-spacing:0.01em;
+    position:relative;
+    padding-bottom:3px;
+  }
+  nav ul li a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
+    background:linear-gradient(90deg,var(--teal),var(--amber));
+    transition:width 0.2s ease;
+  }
+  nav ul li a:hover{color:var(--ink);}
+  nav ul li a:hover::after{width:100%;}
+
+  /* HERO */
+  .hero{
+    padding:100px 0 90px;
+    background:
+      radial-gradient(650px 340px at 92% -8%, rgba(217,131,46,0.14), transparent 65%),
+      radial-gradient(560px 300px at -5% 105%, rgba(46,125,87,0.14), transparent 65%),
+      var(--paper);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center;
+  }
+  .hero .eyebrow{margin-bottom:20px;}
+  .hero h1{
+    font-size:50px;
+    max-width:760px;
+    margin-bottom:24px;
+    letter-spacing:-0.015em;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(90deg,var(--teal),var(--green) 60%,var(--amber));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    font-size:18px;
+    max-width:600px;
+    color:var(--body);
+    margin-bottom:32px;
+  }
+  .hero .cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:44px;}
+  .btn{
+    display:inline-block;
+    padding:13px 26px;
+    font-size:14px;font-weight:700;
+    border-radius:8px;
+    border:1.5px solid var(--teal);
+    color:var(--teal);
+    transition:background 0.18s ease,color 0.18s ease,border-color 0.18s ease,transform 0.18s ease,box-shadow 0.18s ease;
+  }
+  .btn.primary{background:linear-gradient(135deg,var(--teal),var(--green));color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(30,77,107,0.22);}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(30,77,107,0.3);}
+  .btn:not(.primary){background:#fff;}
+  .btn:not(.primary):hover{background:var(--bg-tint);transform:translateY(-2px);}
+
+  .stat-row{display:flex;gap:36px;flex-wrap:wrap;}
+  .stat{border-left:3px solid var(--line);padding-left:14px;}
+  .stat .num{font-family:'Source Serif 4',serif;font-size:28px;font-weight:700;color:var(--ink);}
+  .stat .label{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;}
+
+  /* HERO VISUAL */
+  .hero-visual{position:relative;height:380px;display:flex;align-items:center;justify-content:center;}
+  .orb{
+    position:relative;width:270px;height:270px;border-radius:50%;
+    background:conic-gradient(from 220deg,var(--teal),var(--green),var(--amber),var(--teal));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 30px 70px rgba(20,32,27,0.22);
+  }
+  .orb::before{
+    content:"";position:absolute;inset:9px;border-radius:50%;background:var(--paper);
+  }
+  .orb .initials{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:2px;}
+  .orb .initials .first{font-family:'Source Serif 4',serif;font-size:32px;font-weight:700;color:var(--ink);line-height:1.1;}
+  .orb .initials .last{font-family:'Source Serif 4',serif;font-size:19px;font-weight:600;color:var(--muted);letter-spacing:0.02em;}
+  .float-badge{
+    position:absolute;background:#fff;border:1px solid var(--line);
+    padding:10px 16px;border-radius:12px;
+    box-shadow:0 14px 28px rgba(20,32,27,0.12);
+    font-size:13px;font-weight:700;color:var(--ink);
+    display:flex;align-items:center;gap:8px;
+  }
+  .float-badge .swatch{width:8px;height:8px;border-radius:50%;}
+  .badge-top{top:6px;right:-6px;}
+  .badge-top .swatch{background:var(--amber);}
+  .badge-bottom{bottom:14px;left:-18px;}
+  .badge-bottom .swatch{background:var(--green);}
+  @media(max-width:940px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{display:none;}
+  }
+
+  section{padding:96px 0;border-bottom:1px solid var(--line);}
+  section.bg-white{background:var(--bg);}
+  section h2{font-size:33px;margin-bottom:4px;letter-spacing:-0.01em;}
+  section .intro{max-width:680px;color:var(--body);font-size:16px;margin-bottom:8px;}
+
+  /* ABOUT */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    margin-top:36px;
+  }
+  .about-grid p{margin-bottom:16px;font-size:16px;}
+  .about-side h4{
+    font-family:'Inter',sans-serif;
+    font-size:13px;text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--muted);font-weight:700;margin-bottom:14px;
+  }
+  .tag-cloud{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px;}
+  .tag{
+    font-size:13px;padding:7px 13px;
+    border-radius:20px;color:var(--ink);font-weight:600;
+    border:1px solid transparent;
+    transition:transform 0.15s ease;
+  }
+  .tag:hover{transform:translateY(-2px);}
+  .tag.c1{background:#E7EFEC;}
+  .tag.c2{background:#EAF1F5;}
+  .tag.c3{background:#FBEEE0;}
+  .stakeholders{font-size:14.5px;color:var(--body);}
+  @media(max-width:780px){.about-grid{grid-template-columns:1fr;}}
+
+  /* EXPERIENCE - feature card */
+  .exp-card{
+    margin-top:36px;
+    display:grid;grid-template-columns:150px 1fr;gap:36px;
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:40px;box-shadow:0 18px 40px rgba(20,32,27,0.06);
+  }
+  .exp-num{
+    font-family:'Source Serif 4',serif;font-size:64px;font-weight:700;
+    background:linear-gradient(160deg,var(--teal),var(--green));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    line-height:1;
+  }
+  .exp-num .unit{display:block;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:6px;-webkit-text-fill-color:var(--muted);}
+  .exp-card .role{font-family:'Source Serif 4',serif;font-size:22px;color:var(--ink);font-weight:700;}
+  .exp-card .org{color:var(--teal);font-weight:700;font-size:15px;margin-bottom:14px;}
+  .exp-card p{font-size:15.5px;max-width:640px;margin-bottom:18px;}
+  .exp-sectors{display:flex;flex-wrap:wrap;gap:8px;}
+  .exp-sectors span{
+    font-size:12.5px;font-weight:600;color:var(--body);
+    background:var(--bg-tint);padding:5px 11px;border-radius:6px;
+  }
+  @media(max-width:600px){.exp-card{grid-template-columns:1fr;}.exp-num{font-size:44px;}}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px;}
+  .skill-card{
+    background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:26px 22px 22px;position:relative;overflow:hidden;
+    transition:box-shadow 0.2s ease,transform 0.2s ease;
+  }
+  .skill-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  }
+  .skill-card:nth-child(5n+1)::before{background:var(--teal);}
+  .skill-card:nth-child(5n+2)::before{background:var(--green);}
+  .skill-card:nth-child(5n+3)::before{background:var(--amber);}
+  .skill-card:nth-child(5n+4)::before{background:linear-gradient(90deg,var(--teal),var(--green));}
+  .skill-card:nth-child(5n+5)::before{background:linear-gradient(90deg,var(--green),var(--amber));}
+  .skill-card:hover{box-shadow:0 16px 32px rgba(20,32,27,0.09);transform:translateY(-3px);}
+  .skill-card h4{
+    font-family:'Source Serif 4',serif;font-size:17px;color:var(--ink);margin-bottom:12px;margin-top:6px;font-weight:700;
+  }
+  .skill-card ul{list-style:none;font-size:14.5px;color:var(--body);}
+  .skill-card ul li{padding:5px 0;border-bottom:1px solid var(--line);}
+  .skill-card ul li:last-child{border-bottom:none;}
+  @media(max-width:780px){.skills-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.skills-grid{grid-template-columns:1fr;}}
+
+  /* GALLERY - embedded image grid */
+  .gallery-intro{margin-top:16px;}
+  .gallery-grid{
+    display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:repeat(3,140px);gap:14px;
+    margin-top:36px;
+  }
+  .gallery-grid a{display:block;height:100%;border-radius:12px;overflow:hidden;position:relative;}
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;}
+  .gallery-grid a:hover img{transform:scale(1.05);}
+  .gallery-grid .g-large{grid-row:1/4;}
+  .gallery-grid a::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 60%,rgba(20,32,27,0.45));
+    opacity:0;transition:opacity 0.25s ease;
+  }
+  .gallery-grid a:hover::after{opacity:1;}
+  @media(max-width:780px){
+    .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px 160px;}
+    .gallery-grid .g-large{grid-column:1/3;grid-row:1/2;height:240px;}
+    .gallery-grid a:not(.g-large){grid-row:auto;}
+  }
+  @media(max-width:520px){
+    .gallery-grid{grid-template-columns:1fr;grid-template-rows:none;}
+    .gallery-grid .g-large{grid-column:auto;height:220px;}
+    .gallery-grid a{height:220px;}
+  }
+
+  /* MEDIA */
+  .media-list{margin-top:32px;display:flex;flex-direction:column;gap:0;max-width:680px;}
+  .media-item{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    border-bottom:1px solid var(--line);padding:18px 4px;
+    transition:padding-left 0.15s ease;
+  }
+  .media-item:first-child{padding-top:0;}
+  .media-item:hover{padding-left:8px;}
+  .media-item .outlet-row{display:flex;align-items:center;gap:12px;}
+  .media-item .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+  .media-item:nth-child(odd) .dot{background:var(--teal);}
+  .media-item:nth-child(even) .dot{background:var(--amber);}
+  .media-item .outlet{font-weight:700;color:var(--ink);font-size:15px;}
+  .media-item .note{font-size:13px;color:var(--muted);}
+  .media-item a{font-weight:700;font-size:13.5px;white-space:nowrap;}
+
+  /* CONTACT */
+  .contact-card{
+    margin-top:32px;background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:44px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px;
+    box-shadow:0 18px 40px rgba(20,32,27,0.06);
+  }
+  .contact-details{font-size:15px;}
+  .contact-details div{margin-bottom:12px;}
+  .contact-details .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:0.07em;display:block;margin-bottom:2px;}
+  .contact-details a{font-weight:600;color:var(--ink);}
+
+  footer{
+    padding:36px 0;text-align:center;font-size:13px;color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand"><span class="dot"></span>Saiteja Burra</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HOME / HERO -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Nirmaan Organization</div>
+      <h1>I write and produce communications for one of India's <span class="accent">leading NGOs</span>.</h1>
+      <p class="lead">For the past three years, I've worked across social media, CSR communication, storytelling, and reporting at Nirmaan Organization, turning programme work in education, livelihoods, and rural development into content that partners, donors, and the public can actually follow.</p>
+      <div class="cta-row">
+        <a href="#gallery" class="btn primary">See the gallery</a>
+        <a href="#contact" class="btn">Get in touch</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="num">3</div><div class="label">Years at Nirmaan</div></div>
+        <div class="stat"><div class="num">7</div><div class="label">Sectors covered</div></div>
+        <div class="stat"><div class="num">20+</div><div class="label">Comms formats</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="orb"><span class="initials"><span class="first">Saiteja</span><span class="last">Burra</span></span></div>
+      <div class="float-badge badge-top"><span class="swatch"></span>CSR & storytelling</div>
+      <div class="float-badge badge-bottom"><span class="swatch"></span>Print journalism</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="bg-white" id="about">
+  <div class="wrap">
+    <div class="eyebrow"><span class="eyebrow-num">01</span>About</div>
+    <h2>A bit about the work</h2>
+    <hr class="rule">
+    <div class="about-grid">
+      <div>
+        <p>I've spent the last three years at Nirmaan Organization, working across different parts of communications rather than sticking to one lane. Some weeks that means writing a donor recognition post, others it's a video script, a press release, or content for an internal presentation.</p>
+        <p>Most of what I do involves taking programme work happening on the ground, in education, skilling, livelihoods, women's empowerment, sustainability, disaster relief, and rural development, and turning it into something a donor, a partner, or a volunteer can read and understand without needing context.</p>
+        <p>Day to day, that means working closely with programme teams, corporate partners, leadership, volunteers, beneficiaries, and designers, usually all on the same piece of content, from different angles.</p>
+      </div>
+      <div class="about-side">
+        <h4>What I work on</h4>
+        <div class="tag-cloud">
+          <span class="tag c1">Social media communication</span>
+          <span class="tag c2">CSR communication</span>
+          <span class="tag c3">Corporate communication</span>
+          <span class="tag c1">Impact storytelling</span>
+          <span class="tag c2">Newsletters</span>
+          <span class="tag c3">Annual reports</span>
+          <span class="tag c1">Case studies</span>
+          <span class="tag c2">Success stories</span>
+          <span class="tag c3">Website content</span>
+          <span class="tag c1">Event communication</span>
+          <span class="tag c2">Press releases</span>
+          <span class="tag c3">Media relations</span>
+          <span class="tag c1">Campaign communication</span>
+          <span class="tag c2">Video scripts</span>
+          <span class="tag c3">Volunteer engagement</span>
+          <span class="tag c1">Documentation</span>
+          <span class="tag c2">Internal communication</span>
+          <span class="tag c3">Partner communication</span>
+          <span class="tag c1">Presentation content</span>
+          <span class="tag c2">Leadership communication</span>
+        </div>
+        <h4>Sectors</h4>
+        <p class="stakeholders">Education · Skilling · Livelihoods · Women's empowerment · Sustainability · Disaster relief · Rural development</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow"><span class="eyebrow-num">02</span>Experience</div>
+    <h2>Where I've worked</h2>
+    <hr class="rule">
+    <div class="exp-card">
+      <div class="exp-num">3<span class="unit">Years</span></div>
+      <div>
+        <div class="role">Communications</div>
+        <div class="org">Nirmaan Organization</div>
+        <p>Working across CSR communication, storytelling, reporting, and digital content for one of India's leading NGOs, supporting programmes across education, skilling, livelihoods, women's empowerment, sustainability, disaster relief, and rural development.</p>
+        <div class="exp-sectors">
+          <span>Education</span><span>Skilling</span><span>Livelihoods</span><span>Women's empowerment</span><span>Sustainability</span><span>Disaster relief</span><span>Rural development</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="bg-white" id="skills">
+  <div class="wrap">
+    <div class="eyebrow"><span class="eyebrow-num">03</span>Skills</div>
+    <h2>How the work breaks down</h2>
+    <hr class="rule">
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Writing &amp; storytelling</h4>
+        <ul>
+          <li>Impact storytelling</li>
+          <li>Case studies</li>
+          <li>Success stories</li>
+          <li>Video scripts</li>
+          <li>Press releases</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Corporate &amp; CSR communication</h4>
+        <ul>
+          <li>CSR communication</li>
+          <li>Corporate communication</li>
+          <li>Partner communication</li>
+          <li>Presentation content</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Digital &amp; campaigns</h4>
+        <ul>
+          <li>Social media communication</li>
+          <li>Campaign communication</li>
+          <li>Website content</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Reporting &amp; documentation</h4>
+        <ul>
+          <li>Annual reports</li>
+          <li>Newsletters</li>
+          <li>Documentation</li>
+          <li>Internal communication</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Relations &amp; engagement</h4>
+        <ul>
+          <li>Media relations</li>
+          <li>Event communication</li>
+          <li>Volunteer engagement</li>
+          <li>Leadership communication</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="eyebrow"><span class="eyebrow-num">04</span>Gallery</div>
+    <h2>A closer look at the work behind the words</h2>
+    <hr class="rule">
+    <p class="intro gallery-intro">Behind the scenes from shoots, events, and fieldwork across three years of communications work at Nirmaan.</p>
+    <div class="gallery-grid">
+      <a class="g-large" href="images/gallery-1.jpg" target="_blank" rel="noopener">
+        <img src="images/gallery-1.jpg" alt="On location filming a video shoot with the crew and community members">
+      </a>
+      <a href="images/gallery-2.jpg" target="_blank" rel="noopener">
+        <img src="images/gallery-2.jpg" alt="Volunteering Conclave 2025, group photo on stage with volunteers">
+      </a>
+      <a href="images/gallery-3.jpg" target="_blank" rel="noopener">
+        <img src="images/gallery-3.jpg" alt="Receiving a recognition award at an evening event">
+      </a>
+      <a href="images/gallery-4.jpg" target="_blank" rel="noopener">
+        <img src="images/gallery-4.jpg" alt="Field interview shoot at a rural household with the production team">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA COVERAGE -->
+<section class="bg-white" id="media">
+  <div class="wrap">
+    <div class="eyebrow"><span class="eyebrow-num">05</span>Media Coverage</div>
+    <h2>Press &amp; bylines</h2>
+    <hr class="rule">
+    <p class="intro">Alongside communications work, I have a background in print journalism.</p>
+    <div class="media-list">
+      <div class="media-item">
+        <div class="outlet-row"><span class="dot"></span><div><div class="outlet">The Pioneer</div><div class="note">Byline contributor</div></div></div>
+        <a href="https://drive.google.com/drive/folders/1z1I8rEaPDSkaIPr6C29gZHdnbfjzxu5S" target="_blank" rel="noopener">View clippings →</a>
+      </div>
+      <div class="media-item">
+        <div class="outlet-row"><span class="dot"></span><div><div class="outlet">Nirmaan PR &amp; Media</div><div class="note">Press releases &amp; media relations</div></div></div>
+        <a href="https://drive.google.com/drive/folders/19v0eiBEEJxqN1S_wUjLpnvEyv97jDs1F" target="_blank" rel="noopener">View coverage →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow"><span class="eyebrow-num">06</span>Contact</div>
+    <h2>Get in touch</h2>
+    <hr class="rule">
+    <div class="contact-card">
+      <p style="max-width:420px;font-size:16px;">Happy to talk about communications work, freelance projects, or anything Nirmaan-related.</p>
+      <div class="contact-details">
+        <div><span class="label">Email</span><a href="mailto:saitejagoud1359@gmail.com">saitejagoud1359@gmail.com</a></div>
+        <div><span class="label">Phone</span>7993704139</div>
+        <div><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/saiteja-burra-688194179/" target="_blank" rel="noopener">linkedin.com/in/saiteja-burra-688194179</a></div>
+        <div><span class="label">Location</span>Hyderabad, Telangana</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Saiteja Burra · Communications
+</footer>
+
+</body>
+</html>
