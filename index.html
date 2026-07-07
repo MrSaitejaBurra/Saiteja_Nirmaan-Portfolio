@@ -7,21 +7,28 @@
 <meta name="description" content="Communications portfolio of Saiteja Burra: CSR communication, storytelling, and reporting at Nirmaan Organization.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700;8..60,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#FBF9F3;
+    --paper:#FFF6E9;
     --bg:#FFFFFF;
-    --bg-tint:#F2F7F3;
-    --ink:#14201B;
-    --body:#3E4A44;
-    --teal:#1E4D6B;
-    --green:#2E7D57;
-    --amber:#D9832E;
-    --line:#E2E7E1;
-    --muted:#6E7B74;
+    --bg-tint:#FFEFD6;
+    --ink:#271A10;
+    --body:#54402E;
+    --teal:#E1502C;
+    --green:#0E7C6B;
+    --amber:#F5A623;
+    --gold:#AD8140;
+    --line:#F2DFC0;
+    --muted:#8C7358;
     --max:1120px;
   }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    opacity:0.035;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  header,section,footer,.lightbox,.to-top{position:relative;z-index:1;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
@@ -33,14 +40,14 @@
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,h4{
-    font-family:'Source Serif 4',serif;
+    font-family:'Fraunces',serif;
     color:var(--ink);
     font-weight:600;
     line-height:1.15;
   }
   a{color:var(--teal);text-decoration:none;}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
-
+ 
   /* EYEBROW WITH NUMBER CHIP */
   .eyebrow{
     font-size:12px;
@@ -65,7 +72,7 @@
     margin:16px 0 30px;
     border-radius:2px;
   }
-
+ 
   /* NAV */
   header{
     position:sticky;top:0;z-index:50;
@@ -79,7 +86,7 @@
     flex-wrap:wrap;gap:12px;
   }
   nav .brand{
-    font-family:'Source Serif 4',serif;
+    font-family:'Fraunces',serif;
     font-weight:700;font-size:18px;color:var(--ink);
     display:flex;align-items:center;gap:8px;
   }
@@ -104,13 +111,13 @@
   }
   nav ul li a:hover{color:var(--ink);}
   nav ul li a:hover::after{width:100%;}
-
+ 
   /* HERO */
   .hero{
     padding:100px 0 90px;
     background:
-      radial-gradient(650px 340px at 92% -8%, rgba(217,131,46,0.14), transparent 65%),
-      radial-gradient(560px 300px at -5% 105%, rgba(46,125,87,0.14), transparent 65%),
+      radial-gradient(650px 340px at 92% -8%, rgba(245,166,35,0.24), transparent 65%),
+      radial-gradient(560px 300px at -5% 105%, rgba(14,124,107,0.18), transparent 65%),
       var(--paper);
     position:relative;
     overflow:hidden;
@@ -120,14 +127,16 @@
   }
   .hero .eyebrow{margin-bottom:20px;}
   .hero h1{
-    font-size:50px;
+    font-size:58px;
+    font-weight:700;
     max-width:760px;
     margin-bottom:24px;
-    letter-spacing:-0.015em;
+    letter-spacing:-0.02em;
   }
   .hero h1 .accent{
     background:linear-gradient(90deg,var(--teal),var(--green) 60%,var(--amber));
     -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-style:italic;
   }
   .hero p.lead{
     font-size:18px;
@@ -140,7 +149,7 @@
     display:inline-block;
     padding:13px 26px;
     font-size:14px;font-weight:700;
-    border-radius:8px;
+    border-radius:3px;
     border:1.5px solid var(--teal);
     color:var(--teal);
     transition:background 0.18s ease,color 0.18s ease,border-color 0.18s ease,transform 0.18s ease,box-shadow 0.18s ease;
@@ -149,30 +158,39 @@
   .btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(30,77,107,0.3);}
   .btn:not(.primary){background:#fff;}
   .btn:not(.primary):hover{background:var(--bg-tint);transform:translateY(-2px);}
-
+ 
   .stat-row{display:flex;gap:36px;flex-wrap:wrap;}
   .stat{border-left:3px solid var(--line);padding-left:14px;}
-  .stat .num{font-family:'Source Serif 4',serif;font-size:28px;font-weight:700;color:var(--ink);}
+  .stat:nth-child(1){border-left-color:var(--teal);}
+  .stat:nth-child(2){border-left-color:var(--green);}
+  .stat:nth-child(3){border-left-color:var(--amber);}
+  .stat .icon-row{display:flex;align-items:center;gap:7px;margin-bottom:2px;}
+  .stat .icon-row svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  .stat .num{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--ink);}
   .stat .label{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;}
-
+ 
   /* HERO VISUAL */
   .hero-visual{position:relative;height:380px;display:flex;align-items:center;justify-content:center;}
   .orb{
     position:relative;width:270px;height:270px;border-radius:50%;
     background:conic-gradient(from 220deg,var(--teal),var(--green),var(--amber),var(--teal));
     display:flex;align-items:center;justify-content:center;
-    box-shadow:0 30px 70px rgba(20,32,27,0.22);
+    box-shadow:0 30px 70px rgba(38,26,16,0.22);
   }
   .orb::before{
     content:"";position:absolute;inset:9px;border-radius:50%;background:var(--paper);
   }
+  .orb::after{
+    content:"";position:absolute;inset:-8px;border-radius:50%;
+    border:1px solid var(--gold);opacity:0.4;
+  }
   .orb .initials{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:2px;}
-  .orb .initials .first{font-family:'Source Serif 4',serif;font-size:32px;font-weight:700;color:var(--ink);line-height:1.1;}
-  .orb .initials .last{font-family:'Source Serif 4',serif;font-size:19px;font-weight:600;color:var(--muted);letter-spacing:0.02em;}
+  .orb .initials .first{font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:var(--ink);line-height:1.1;}
+  .orb .initials .last{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--muted);letter-spacing:0.02em;}
   .float-badge{
     position:absolute;background:#fff;border:1px solid var(--line);
-    padding:10px 16px;border-radius:12px;
-    box-shadow:0 14px 28px rgba(20,32,27,0.12);
+    padding:10px 16px;border-radius:4px;
+    box-shadow:0 14px 28px rgba(38,26,16,0.12);
     font-size:13px;font-weight:700;color:var(--ink);
     display:flex;align-items:center;gap:8px;
   }
@@ -185,12 +203,12 @@
     .hero-grid{grid-template-columns:1fr;}
     .hero-visual{display:none;}
   }
-
+ 
   section{padding:96px 0;border-bottom:1px solid var(--line);}
   section.bg-white{background:var(--bg);}
   section h2{font-size:33px;margin-bottom:4px;letter-spacing:-0.01em;}
   section .intro{max-width:680px;color:var(--body);font-size:16px;margin-bottom:8px;}
-
+ 
   /* ABOUT */
   .about-grid{
     display:grid;
@@ -199,6 +217,10 @@
     margin-top:36px;
   }
   .about-grid p{margin-bottom:16px;font-size:16px;}
+  .about-grid > div:first-child p:first-child::first-letter{
+    font-family:'Fraunces',serif;font-size:56px;font-weight:600;color:var(--teal);
+    float:left;line-height:0.8;padding:6px 8px 0 0;
+  }
   .about-side h4{
     font-family:'Inter',sans-serif;
     font-size:13px;text-transform:uppercase;letter-spacing:0.08em;
@@ -212,27 +234,32 @@
     transition:transform 0.15s ease;
   }
   .tag:hover{transform:translateY(-2px);}
-  .tag.c1{background:#E7EFEC;}
-  .tag.c2{background:#EAF1F5;}
-  .tag.c3{background:#FBEEE0;}
+  .tag.c1{background:#FCE3D6;color:#8A2E11;}
+  .tag.c2{background:#D9F0EA;color:#0B5347;}
+  .tag.c3{background:#FDEBC7;color:#8A5B05;}
   .stakeholders{font-size:14.5px;color:var(--body);}
   @media(max-width:780px){.about-grid{grid-template-columns:1fr;}}
-
+ 
   /* EXPERIENCE - feature card */
   .exp-card{
     margin-top:36px;
     display:grid;grid-template-columns:150px 1fr;gap:36px;
-    background:#fff;border:1px solid var(--line);border-radius:14px;
-    padding:40px;box-shadow:0 18px 40px rgba(20,32,27,0.06);
+    background:#fff;border:1px solid var(--line);border-radius:4px;
+    padding:40px;box-shadow:0 24px 50px rgba(38,26,16,0.07);
+    position:relative;
+  }
+  .exp-card::before{
+    content:"";position:absolute;top:0;left:0;bottom:0;width:3px;
+    background:linear-gradient(180deg,var(--teal),var(--gold));
   }
   .exp-num{
-    font-family:'Source Serif 4',serif;font-size:64px;font-weight:700;
+    font-family:'Fraunces',serif;font-size:64px;font-weight:700;
     background:linear-gradient(160deg,var(--teal),var(--green));
     -webkit-background-clip:text;background-clip:text;color:transparent;
     line-height:1;
   }
   .exp-num .unit{display:block;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:6px;-webkit-text-fill-color:var(--muted);}
-  .exp-card .role{font-family:'Source Serif 4',serif;font-size:22px;color:var(--ink);font-weight:700;}
+  .exp-card .role{font-family:'Fraunces',serif;font-size:22px;color:var(--ink);font-weight:700;}
   .exp-card .org{color:var(--teal);font-weight:700;font-size:15px;margin-bottom:14px;}
   .exp-card p{font-size:15.5px;max-width:640px;margin-bottom:18px;}
   .exp-sectors{display:flex;flex-wrap:wrap;gap:8px;}
@@ -241,45 +268,61 @@
     background:var(--bg-tint);padding:5px 11px;border-radius:6px;
   }
   @media(max-width:600px){.exp-card{grid-template-columns:1fr;}.exp-num{font-size:44px;}}
-
+ 
   /* SKILLS */
   .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px;}
   .skill-card{
-    background:#fff;border:1px solid var(--line);border-radius:10px;
-    padding:26px 22px 22px;position:relative;overflow:hidden;
-    transition:box-shadow 0.2s ease,transform 0.2s ease;
+    background:#fff;border:1px solid var(--line);border-radius:4px;
+    padding:28px 24px 24px;position:relative;overflow:hidden;
+    transition:box-shadow 0.2s ease,transform 0.2s ease,border-color 0.2s ease;
   }
   .skill-card::before{
-    content:"";position:absolute;top:0;left:0;right:0;height:4px;
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
   }
+  .skill-icon{
+    width:38px;height:38px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;color:#fff;
+  }
+  .skill-icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  .skill-card:nth-child(5n+1) .skill-icon{background:var(--teal);}
+  .skill-card:nth-child(5n+2) .skill-icon{background:var(--green);}
+  .skill-card:nth-child(5n+3) .skill-icon{background:var(--amber);}
+  .skill-card:nth-child(5n+4) .skill-icon{background:linear-gradient(135deg,var(--teal),var(--amber));}
+  .skill-card:nth-child(5n+5) .skill-icon{background:linear-gradient(135deg,var(--green),var(--amber));}
+  .skill-card:nth-child(5n+1){background:linear-gradient(180deg,#FCE9DE 0%,#fff 130px);}
+  .skill-card:nth-child(5n+2){background:linear-gradient(180deg,#DCF1EC 0%,#fff 130px);}
+  .skill-card:nth-child(5n+3){background:linear-gradient(180deg,#FDEDCC 0%,#fff 130px);}
+  .skill-card:nth-child(5n+4){background:linear-gradient(180deg,#FCE9DE 0%,#fff 130px);}
+  .skill-card:nth-child(5n+5){background:linear-gradient(180deg,#FDEDCC 0%,#fff 130px);}
   .skill-card:nth-child(5n+1)::before{background:var(--teal);}
   .skill-card:nth-child(5n+2)::before{background:var(--green);}
   .skill-card:nth-child(5n+3)::before{background:var(--amber);}
-  .skill-card:nth-child(5n+4)::before{background:linear-gradient(90deg,var(--teal),var(--green));}
+  .skill-card:nth-child(5n+4)::before{background:linear-gradient(90deg,var(--teal),var(--amber));}
   .skill-card:nth-child(5n+5)::before{background:linear-gradient(90deg,var(--green),var(--amber));}
-  .skill-card:hover{box-shadow:0 16px 32px rgba(20,32,27,0.09);transform:translateY(-3px);}
+  .skill-card:hover{box-shadow:0 20px 40px rgba(38,26,16,0.1);transform:translateY(-3px);border-color:var(--gold);}
   .skill-card h4{
-    font-family:'Source Serif 4',serif;font-size:17px;color:var(--ink);margin-bottom:12px;margin-top:6px;font-weight:700;
+    font-family:'Fraunces',serif;font-size:17px;color:var(--ink);margin-bottom:12px;margin-top:0;font-weight:700;
   }
   .skill-card ul{list-style:none;font-size:14.5px;color:var(--body);}
   .skill-card ul li{padding:5px 0;border-bottom:1px solid var(--line);}
   .skill-card ul li:last-child{border-bottom:none;}
   @media(max-width:780px){.skills-grid{grid-template-columns:1fr 1fr;}}
   @media(max-width:560px){.skills-grid{grid-template-columns:1fr;}}
-
+ 
   /* GALLERY - embedded image grid */
   .gallery-intro{margin-top:16px;}
   .gallery-grid{
     display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:repeat(3,140px);gap:14px;
     margin-top:36px;
   }
-  .gallery-grid a{display:block;height:100%;border-radius:12px;overflow:hidden;position:relative;}
+  .gallery-grid a{display:block;height:100%;border-radius:4px;overflow:hidden;position:relative;}
   .gallery-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;}
   .gallery-grid a:hover img{transform:scale(1.05);}
   .gallery-grid .g-large{grid-row:1/4;}
   .gallery-grid a::after{
     content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,transparent 60%,rgba(20,32,27,0.45));
+    background:linear-gradient(180deg,transparent 60%,rgba(38,26,16,0.45));
     opacity:0;transition:opacity 0.25s ease;
   }
   .gallery-grid a:hover::after{opacity:1;}
@@ -293,7 +336,7 @@
     .gallery-grid .g-large{grid-column:auto;height:220px;}
     .gallery-grid a{height:220px;}
   }
-
+ 
   /* MEDIA */
   .media-list{margin-top:32px;display:flex;flex-direction:column;gap:0;max-width:680px;}
   .media-item{
@@ -310,29 +353,110 @@
   .media-item .outlet{font-weight:700;color:var(--ink);font-size:15px;}
   .media-item .note{font-size:13px;color:var(--muted);}
   .media-item a{font-weight:700;font-size:13.5px;white-space:nowrap;}
-
+ 
   /* CONTACT */
   .contact-card{
-    margin-top:32px;background:#fff;border:1px solid var(--line);border-radius:16px;
+    margin-top:32px;background:#fff;border:1px solid var(--line);border-radius:4px;
     padding:44px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px;
-    box-shadow:0 18px 40px rgba(20,32,27,0.06);
+    box-shadow:0 24px 50px rgba(38,26,16,0.07);
+    position:relative;
+  }
+  .contact-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--teal),var(--gold),var(--amber));
   }
   .contact-details{font-size:15px;}
   .contact-details div{margin-bottom:12px;}
   .contact-details .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:0.07em;display:block;margin-bottom:2px;}
   .contact-details a{font-weight:600;color:var(--ink);}
-
+ 
   footer{
     padding:36px 0;text-align:center;font-size:13px;color:var(--muted);
   }
+ 
+  /* SCROLL REVEAL */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.7s cubic-bezier(.2,.7,.2,1),transform 0.7s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  .skills-grid .reveal.in-view,.gallery-grid .reveal.in-view{transition-delay:var(--d,0s);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .orb,.float-badge{animation:none !important;}
+  }
+ 
+  /* HERO VISUAL MOTION */
+  .orb{animation:orbTurn 26s linear infinite;}
+  @keyframes orbTurn{to{transform:rotate(360deg);}}
+  .orb .initials{animation:orbCounter 26s linear infinite;}
+  @keyframes orbCounter{to{transform:rotate(-360deg);}}
+  .float-badge{animation:badgeFloat 5s ease-in-out infinite;}
+  .badge-bottom{animation-delay:1.2s;}
+  @keyframes badgeFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+ 
+  /* STAT COUNTER */
+  .stat .num{font-variant-numeric:tabular-nums;}
+ 
+  /* NAV — active link + mobile toggle */
+  nav ul li a.active{color:var(--ink);}
+  nav ul li a.active::after{width:100%;}
+  .nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:38px;height:38px;align-items:center;justify-content:center;cursor:pointer;}
+  .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{
+    content:"";display:block;width:18px;height:2px;background:var(--ink);position:relative;transition:all 0.2s ease;
+  }
+  .nav-toggle span::before{position:absolute;top:-6px;}
+  .nav-toggle span::after{position:absolute;top:6px;}
+  @media(max-width:700px){
+    .nav-toggle{display:flex;}
+    nav ul{
+      position:absolute;top:100%;left:0;right:0;background:var(--paper);
+      flex-direction:column;gap:0;max-height:0;overflow:hidden;
+      border-bottom:1px solid var(--line);transition:max-height 0.25s ease;
+    }
+    nav ul.open{max-height:360px;}
+    nav ul li{width:100%;}
+    nav ul li a{display:block;padding:14px 32px;}
+    nav ul li a::after{display:none;}
+  }
+ 
+  /* GALLERY LIGHTBOX */
+  .gallery-grid a{cursor:zoom-in;}
+  .lightbox{
+    position:fixed;inset:0;z-index:200;background:rgba(38,26,16,0.86);
+    display:flex;align-items:center;justify-content:center;padding:40px;
+    opacity:0;visibility:hidden;transition:opacity 0.25s ease;
+  }
+  .lightbox.open{opacity:1;visibility:visible;}
+  .lightbox img{max-width:min(880px,90vw);max-height:80vh;border-radius:10px;box-shadow:0 30px 70px rgba(0,0,0,0.4);}
+  .lightbox figcaption{color:#F2F7F3;font-size:13.5px;text-align:center;margin-top:16px;max-width:600px;}
+  .lightbox-close,.lightbox-nav{
+    position:absolute;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);
+    color:#fff;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;font-size:20px;transition:background 0.15s ease;
+  }
+  .lightbox-close:hover,.lightbox-nav:hover{background:rgba(255,255,255,0.22);}
+  .lightbox-close{top:24px;right:24px;}
+  .lightbox-nav.prev{left:24px;top:50%;transform:translateY(-50%);}
+  .lightbox-nav.next{right:24px;top:50%;transform:translateY(-50%);}
+  @media(max-width:600px){.lightbox-nav{width:38px;height:38px;}}
+ 
+  /* BACK TO TOP */
+  .to-top{
+    position:fixed;bottom:26px;right:26px;z-index:80;
+    width:46px;height:46px;border-radius:50%;
+    background:linear-gradient(135deg,var(--teal),var(--green));color:#fff;
+    display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;
+    box-shadow:0 14px 28px rgba(38,26,16,0.22);
+    opacity:0;visibility:hidden;transform:translateY(10px);
+    transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s ease;
+  }
+  .to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
 </style>
 </head>
 <body>
-
+ 
 <header>
   <nav>
     <div class="brand"><span class="dot"></span>Saiteja Burra</div>
-    <ul>
+    <ul id="navList">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -340,9 +464,10 @@
       <li><a href="#media">Media</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
   </nav>
 </header>
-
+ 
 <!-- HOME / HERO -->
 <section class="hero" id="home">
   <div class="wrap hero-grid">
@@ -355,9 +480,9 @@
         <a href="#contact" class="btn">Get in touch</a>
       </div>
       <div class="stat-row">
-        <div class="stat"><div class="num">3</div><div class="label">Years at Nirmaan</div></div>
-        <div class="stat"><div class="num">7</div><div class="label">Sectors covered</div></div>
-        <div class="stat"><div class="num">20+</div><div class="label">Comms formats</div></div>
+        <div class="stat"><div class="icon-row"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div class="num" data-count="3">0</div><div class="label">Years at Nirmaan</div></div>
+        <div class="stat"><div class="icon-row"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div><div class="num" data-count="7">0</div><div class="label">Sectors covered</div></div>
+        <div class="stat"><div class="icon-row"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div class="num" data-count="20" data-suffix="+">0</div><div class="label">Comms formats</div></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -367,14 +492,14 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ABOUT -->
 <section class="bg-white" id="about">
   <div class="wrap">
-    <div class="eyebrow"><span class="eyebrow-num">01</span>About</div>
-    <h2>A bit about the work</h2>
-    <hr class="rule">
-    <div class="about-grid">
+    <div class="eyebrow reveal"><span class="eyebrow-num">01</span>About</div>
+    <h2 class="reveal">A bit about the work</h2>
+    <hr class="rule reveal">
+    <div class="about-grid reveal">
       <div>
         <p>I've spent the last three years at Nirmaan Organization, working across different parts of communications rather than sticking to one lane. Some weeks that means writing a donor recognition post, others it's a video script, a press release, or content for an internal presentation.</p>
         <p>Most of what I do involves taking programme work happening on the ground, in education, skilling, livelihoods, women's empowerment, sustainability, disaster relief, and rural development, and turning it into something a donor, a partner, or a volunteer can read and understand without needing context.</p>
@@ -410,14 +535,14 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
-    <div class="eyebrow"><span class="eyebrow-num">02</span>Experience</div>
-    <h2>Where I've worked</h2>
-    <hr class="rule">
-    <div class="exp-card">
+    <div class="eyebrow reveal"><span class="eyebrow-num">02</span>Experience</div>
+    <h2 class="reveal">Where I've worked</h2>
+    <hr class="rule reveal">
+    <div class="exp-card reveal">
       <div class="exp-num">3<span class="unit">Years</span></div>
       <div>
         <div class="role">Communications</div>
@@ -430,15 +555,16 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- SKILLS -->
 <section class="bg-white" id="skills">
   <div class="wrap">
-    <div class="eyebrow"><span class="eyebrow-num">03</span>Skills</div>
-    <h2>How the work breaks down</h2>
-    <hr class="rule">
+    <div class="eyebrow reveal"><span class="eyebrow-num">03</span>Skills</div>
+    <h2 class="reveal">How the work breaks down</h2>
+    <hr class="rule reveal">
     <div class="skills-grid">
-      <div class="skill-card">
+      <div class="skill-card reveal" style="--d:0s">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
         <h4>Writing &amp; storytelling</h4>
         <ul>
           <li>Impact storytelling</li>
@@ -448,7 +574,8 @@
           <li>Press releases</li>
         </ul>
       </div>
-      <div class="skill-card">
+      <div class="skill-card reveal" style="--d:0.08s">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
         <h4>Corporate &amp; CSR communication</h4>
         <ul>
           <li>CSR communication</li>
@@ -457,7 +584,8 @@
           <li>Presentation content</li>
         </ul>
       </div>
-      <div class="skill-card">
+      <div class="skill-card reveal" style="--d:0.16s">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9-9"/><path d="M4 11a5 5 0 0 1 5-5"/><circle cx="4" cy="16" r="2"/><path d="M4 18v3"/></svg></div>
         <h4>Digital &amp; campaigns</h4>
         <ul>
           <li>Social media communication</li>
@@ -465,7 +593,8 @@
           <li>Website content</li>
         </ul>
       </div>
-      <div class="skill-card">
+      <div class="skill-card reveal" style="--d:0.24s">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></div>
         <h4>Reporting &amp; documentation</h4>
         <ul>
           <li>Annual reports</li>
@@ -474,7 +603,8 @@
           <li>Internal communication</li>
         </ul>
       </div>
-      <div class="skill-card">
+      <div class="skill-card reveal" style="--d:0.32s">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h4>Relations &amp; engagement</h4>
         <ul>
           <li>Media relations</li>
@@ -486,58 +616,58 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- GALLERY -->
 <section id="gallery">
   <div class="wrap">
-    <div class="eyebrow"><span class="eyebrow-num">04</span>Gallery</div>
-    <h2>A closer look at the work behind the words</h2>
-    <hr class="rule">
-    <p class="intro gallery-intro">Behind the scenes from shoots, events, and fieldwork across three years of communications work at Nirmaan.</p>
+    <div class="eyebrow reveal"><span class="eyebrow-num">04</span>Gallery</div>
+    <h2 class="reveal">A closer look at the work behind the words</h2>
+    <hr class="rule reveal">
+    <p class="intro gallery-intro reveal">Behind the scenes from shoots, events, and fieldwork across three years of communications work at Nirmaan.</p>
     <div class="gallery-grid">
-      <a class="g-large" href="gallery-1.jpg" target="_blank" rel="noopener">
-        <img src="gallery-1.jpg" alt="On location filming a video shoot with the crew and community members">
+      <a class="g-large reveal" style="--d:0s" href="gallery-1.jpg" data-caption="On location filming a video shoot with the crew and community members">
+        <img src="gallery-1.jpg" alt="On location filming a video shoot with the crew and community members" loading="lazy">
       </a>
-      <a href="gallery-2.jpg" target="_blank" rel="noopener">
-        <img src="gallery-2.jpg" alt="Volunteering Conclave 2025, group photo on stage with volunteers">
+      <a class="reveal" style="--d:0.08s" href="gallery-2.jpg" data-caption="Volunteering Conclave 2025, group photo on stage with volunteers">
+        <img src="gallery-2.jpg" alt="Volunteering Conclave 2025, group photo on stage with volunteers" loading="lazy">
       </a>
-      <a href="gallery-3.jpg" target="_blank" rel="noopener">
-        <img src="gallery-3.jpg" alt="Receiving a recognition award at an evening event">
+      <a class="reveal" style="--d:0.16s" href="gallery-3.jpg" data-caption="Receiving a recognition award at an evening event">
+        <img src="gallery-3.jpg" alt="Receiving a recognition award at an evening event" loading="lazy">
       </a>
-      <a href="gallery-4.jpg" target="_blank" rel="noopener">
-        <img src="gallery-4.jpg" alt="Field interview shoot at a rural household with the production team">
+      <a class="reveal" style="--d:0.24s" href="gallery-4.jpg" data-caption="Field interview shoot at a rural household with the production team">
+        <img src="gallery-4.jpg" alt="Field interview shoot at a rural household with the production team" loading="lazy">
       </a>
     </div>
   </div>
 </section>
-
+ 
 <!-- MEDIA COVERAGE -->
 <section class="bg-white" id="media">
   <div class="wrap">
-    <div class="eyebrow"><span class="eyebrow-num">05</span>Media Coverage</div>
-    <h2>Press &amp; bylines</h2>
-    <hr class="rule">
-    <p class="intro">Alongside communications work, I have a background in print journalism.</p>
+    <div class="eyebrow reveal"><span class="eyebrow-num">05</span>Media Coverage</div>
+    <h2 class="reveal">Press &amp; bylines</h2>
+    <hr class="rule reveal">
+    <p class="intro reveal">Alongside communications work, I have a background in print journalism.</p>
     <div class="media-list">
-      <div class="media-item">
+      <div class="media-item reveal">
         <div class="outlet-row"><span class="dot"></span><div><div class="outlet">The Pioneer</div><div class="note">Byline contributor</div></div></div>
         <a href="https://drive.google.com/drive/folders/1z1I8rEaPDSkaIPr6C29gZHdnbfjzxu5S" target="_blank" rel="noopener">View clippings →</a>
       </div>
-      <div class="media-item">
+      <div class="media-item reveal" style="--d:0.08s">
         <div class="outlet-row"><span class="dot"></span><div><div class="outlet">Nirmaan PR &amp; Media</div><div class="note">Press releases &amp; media relations</div></div></div>
         <a href="https://drive.google.com/drive/folders/19v0eiBEEJxqN1S_wUjLpnvEyv97jDs1F" target="_blank" rel="noopener">View coverage →</a>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
-    <div class="eyebrow"><span class="eyebrow-num">06</span>Contact</div>
-    <h2>Get in touch</h2>
-    <hr class="rule">
-    <div class="contact-card">
+    <div class="eyebrow reveal"><span class="eyebrow-num">06</span>Contact</div>
+    <h2 class="reveal">Get in touch</h2>
+    <hr class="rule reveal">
+    <div class="contact-card reveal">
       <p style="max-width:420px;font-size:16px;">Happy to talk about communications work, freelance projects, or anything Nirmaan-related.</p>
       <div class="contact-details">
         <div><span class="label">Email</span><a href="mailto:saitejaburraofficial@gmail.com">saitejaburraofficial@gmail.com</a></div>
@@ -548,10 +678,140 @@
     </div>
   </div>
 </section>
-
+ 
 <footer>
   Saiteja Burra · Communications
 </footer>
-
+ 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-nav prev" id="lbPrev" aria-label="Previous image">‹</button>
+  <figure style="margin:0;text-align:center;">
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCaption"></figcaption>
+  </figure>
+  <button class="lightbox-nav next" id="lbNext" aria-label="Next image">›</button>
+  <button class="lightbox-close" id="lbClose" aria-label="Close">×</button>
+</div>
+ 
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+ 
+<script>
+(function(){
+  /* Scroll reveal */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+      });
+    },{threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+ 
+  /* Stat counters */
+  var counters = document.querySelectorAll('[data-count]');
+  var animated = new WeakSet();
+  function runCounter(el){
+    if(animated.has(el)) return;
+    animated.add(el);
+    var target = parseInt(el.getAttribute('data-count'),10) || 0;
+    var suffix = el.getAttribute('data-suffix') || '';
+    var start = null, duration = 1100;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts-start)/duration,1);
+      var eased = 1 - Math.pow(1-progress,3);
+      el.textContent = Math.round(eased*target) + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var co = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) runCounter(e.target); });
+    },{threshold:0.6});
+    counters.forEach(function(el){ co.observe(el); });
+  } else {
+    counters.forEach(runCounter);
+  }
+ 
+  /* Active nav link on scroll */
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('nav ul li a');
+  function onScroll(){
+    var pos = window.scrollY + 120;
+    sections.forEach(function(sec){
+      var top = sec.offsetTop, bottom = top + sec.offsetHeight;
+      var link = document.querySelector('nav ul li a[href="#'+sec.id+'"]');
+      if(!link) return;
+      if(pos >= top && pos < bottom){ link.classList.add('active'); }
+      else { link.classList.remove('active'); }
+    });
+    document.getElementById('toTop').classList.toggle('show', window.scrollY > 600);
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+ 
+  /* Mobile nav toggle */
+  var toggle = document.getElementById('navToggle');
+  var navList = document.getElementById('navList');
+  toggle.addEventListener('click', function(){
+    var open = navList.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.forEach(function(a){
+    a.addEventListener('click', function(){ navList.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+ 
+  /* Back to top */
+  document.getElementById('toTop').addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+ 
+  /* Lightbox */
+  var galleryLinks = Array.prototype.slice.call(document.querySelectorAll('.gallery-grid a'));
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCaption = document.getElementById('lbCaption');
+  var current = 0;
+ 
+  function openLightbox(i){
+    current = i;
+    var a = galleryLinks[i];
+    lbImg.src = a.getAttribute('href');
+    lbImg.alt = a.getAttribute('data-caption') || '';
+    lbCaption.textContent = a.getAttribute('data-caption') || '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  function showRelative(delta){
+    current = (current + delta + galleryLinks.length) % galleryLinks.length;
+    openLightbox(current);
+  }
+ 
+  galleryLinks.forEach(function(a, i){
+    a.addEventListener('click', function(ev){ ev.preventDefault(); openLightbox(i); });
+  });
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', function(){ showRelative(-1); });
+  document.getElementById('lbNext').addEventListener('click', function(){ showRelative(1); });
+  lightbox.addEventListener('click', function(ev){ if(ev.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', function(ev){
+    if(!lightbox.classList.contains('open')) return;
+    if(ev.key === 'Escape') closeLightbox();
+    if(ev.key === 'ArrowLeft') showRelative(-1);
+    if(ev.key === 'ArrowRight') showRelative(1);
+  });
+})();
+</script>
+ 
 </body>
 </html>
